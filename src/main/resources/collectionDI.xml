@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="collectionDI" class="com.faon.spring.spring_di.collectionDI.HelloWorld">
+        <property name="list">
+            <list>
+                <value>1</value>
+                <value>2</value>
+                <value>3</value>
+                <value>4</value>
+            </list>
+        </property>
+
+        <property name="set">
+            <set>
+                <value>1</value>
+                <value>2</value>
+                <value>3</value>
+                <value>4</value>
+            </set>
+        </property>
+
+        <property name="map">
+            <map>
+                <entry key="1" value="test1"/>
+                <entry key="2" value="test2"/>
+                <entry key="3" value="test3"/>
+                <entry key="4" value="test4"/>
+            </map>
+        </property>
+
+        <property name="propreties">
+            <props>
+                <prop key="1">test1</prop>
+                <prop key="2">test2</prop>
+                <prop key="3">test3</prop>
+                <prop key="4">test4</prop>
+            </props>
+        </property>
+    </bean>
+</beans>

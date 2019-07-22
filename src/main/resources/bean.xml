@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="beanFactory" class="com.faon.spring.spring_ioc.beanFactory.HelloWorld">
+        <property name="message" value="Hello World!" />
+    </bean>
+
+    <bean id="applicationContext" class="com.faon.spring.spring_ioc.applicationContext.HelloWorld">
+        <property name="message" value="Hello World applicationContext!" />
+    </bean>
+
+<!--scope：作用域，一共五个
+          1.singleton 单例模式创建实例（默认选项）
+          2.prototype(原型) 每次都创建新的对象
+          3.request 每次http请求都会创建一个新的对象 ，该作用域仅适用于WebApplicationContext环境
+          4.session  同一个HTTP Session共享一个Bean，不同Session使用不同的Bean，仅适用于WebApplicationContext环境
+          5.global-session  一般用于Portlet应用环境，该运用域仅适用于WebApplicationContext环境
+
+-->
+    <bean id="beanDefine" class="com.faon.spring.spring_ioc.beanDefine.HelloWorld" scope="singleton">
+        <property name="message" value="Hello World beanDefine!"  />
+    </bean>
+
+
+    <bean id="beanLifeCycle" class="com.faon.spring.spring_ioc.beanLifeCycle.HelloWorld" init-method="init" destroy-method="destroy">
+        <property name="message" value="Hello World beanLifeCycle!"  />
+    </bean>
+
+
+    <bean id="beanProcessor" class="com.faon.spring.spring_ioc.beanProcessor.HelloWorld" init-method="init" destroy-method="destroy">
+        <property name="message" value="Hello World beanProcessor!"  />
+    </bean>
+
+    <bean class="com.faon.spring.spring_ioc.beanProcessor.BeanProcessorTest" />
+</beans>
