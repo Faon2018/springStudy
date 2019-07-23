@@ -4,7 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="testA" class="com.faon.spring.spring_di.functionDI.TestA" p:testB-ref="testB">
-<!--        <property name="testB" ref="testB" />-->
+        <property name="name" value="test_function" />
     </bean>
 
     <bean id="testB" class="com.faon.spring.spring_di.functionDI.TestB"></bean>
